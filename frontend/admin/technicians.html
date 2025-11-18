@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Technicians - Home Appliance Repair</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <style>
+        * {
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        body {
+            background: #000;
+            color: #fff;
+        }
+        
+        /* Top Bar */
+        .top-bar {
+            background: #000;
+            padding: 10px 0;
+            border-bottom: 1px solid #333;
+        }
+        
+        .social-icons a {
+            color: #fff;
+            background: #222;
+            width: 35px;
+            height: 35px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 5px;
+            margin: 0 3px;
+            transition: all 0.3s;
+        }
+        
+        .social-icons a:hover {
+            background: #667eea;
+        }
+        
+        .contact-info {
+            color: #fff;
+            font-size: 0.9rem;
+        }
+        
+        .contact-info i {
+            color: #667eea;
+            margin-right: 5px;
+        }
+        
+        /* Navigation */
+        .navbar {
+            background: rgba(0, 0, 0, 0.95) !important;
+            padding: 15px 0;
+        }
+        
+        .navbar-brand {
+            font-size: 1.8rem;
+            font-weight: 900;
+            color: #fff !important;
+        }
+        
+        .navbar-nav .nav-link {
+            color: #fff !important;
+            font-weight: 600;
+            padding: 10px 20px !important;
+            transition: all 0.3s;
+        }
+        
+        .navbar-nav .nav-link:hover,
+        .navbar-nav .nav-link.active {
+            color: #667eea !important;
+        }
+        
+        .btn-appointment {
+            background: #667eea;
+            color: #fff;
+            border: none;
+            padding: 10px 30px;
+            border-radius: 5px;
+            font-weight: 700;
+            transition: all 0.3s;
+        }
+        
+        .btn-appointment:hover {
+            background: #764ba2;
+        }
+        
+        /* Page Header */
+        .page-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 80px 0 60px;
+            text-align: center;
+        }
+        
+        .page-header h1 {
+            font-size: 3.5rem;
+            font-weight: 900;
+            color: #fff;
+            margin-bottom: 20px;
+        }
+        
+        .page-header p {
+            font-size: 1.3rem;
+            color: #fff;
+        }
+        
+        /* Technicians Section */
+        .technicians-section {
+            background: #000;
+            padding: 80px 0;
+        }
+        
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 40px;
+        }
+        
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 900;
+            color: #fff;
+        }
+        
+        .btn-add {
+            background: #667eea;
+            color: #fff;
+            border: none;
+            padding: 15px 40px;
+            border-radius: 5px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            transition: all 0.3s;
+        }
+        
+        .btn-add:hover {
+            background: #764ba2;
+            color: #fff;
+        }
+        
+        /* Table Container */
+        .table-container {
+            background: #1a1a1a;
+            padding: 40px;
+            border-radius: 15px;
+            border: 1px solid #333;
+        }
+        
+        .custom-table {
+            color: #fff;
+        }
+        
+        .custom-table thead {
+            background: #667eea;
+        }
+        
+        .custom-table thead th {
+            border: none;
+            padding: 20px 15px;
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+        
+        .custom-table tbody tr {
+            border-bottom: 1px solid #333;
+        }
+        
+        .custom-table tbody tr:hover {
+            background: #222;
+        }
+        
+        .custom-table tbody td {
+            padding: 20px 15px;
+            border: none;
+            vertical-align: middle;
+            font-size: 1rem;
+        }
+        
+        /* Specialty Badge */
+        .badge-specialty {
+            background: #48bb78;
+            color: #fff;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+        
+        /* Action Buttons */
+        .btn-edit {
+            background: #48bb78;
+            color: #fff;
+            border: none;
+            padding: 8px 20px;
+            border-radius: 5px;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+        
+        .btn-edit:hover {
+            background: #38a169;
+            color: #fff;
+        }
+        
+        .btn-delete {
+            background: #f56565;
+            color: #fff;
+            border: none;
+            padding: 8px 20px;
+            border-radius: 5px;
+            font-weight: 600;
+            transition: all 0.3s;
+            margin-left: 10px;
+        }
+        
+        .btn-delete:hover {
+            background: #e53e3e;
+            color: #fff;
+        }
+        
+        /* Footer */
+        footer {
+            background: #0a0a0a;
+            padding: 60px 0 20px;
+            border-top: 1px solid #222;
+        }
+        
+        footer h5 {
+            color: #fff;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+        
+        footer p, footer a {
+            color: #999;
+        }
+        
+        footer a:hover {
+            color: #667eea;
+        }
+        
+        .footer-bottom {
+            border-top: 1px solid #222;
+            padding-top: 20px;
+            margin-top: 40px;
+        }
+        
+        @media (max-width: 768px) {
+            .section-header {
+                flex-direction: column;
+                gap: 20px;
+            }
+            
+            .table-container {
+                overflow-x: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="col-md-6 text-end">
+                    <span class="contact-info">
+                        <i class="fas fa-phone"></i> +968 1234 5678
+                    </span>
+                    <span class="contact-info ms-4">
+                        <i class="fas fa-envelope"></i> info@appliancefixpro.com
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+ <!-- Admin Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+    <div class="container">
+        <a class="navbar-brand" href="#">ApplianceFix Pro</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link active" href="./dashboard.html">
+                        <i class="fas fa-chart-line me-1"></i>Dashboard
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="./customers.html">
+                        <i class="fas fa-users me-1"></i>Customers
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="./technicians.html">
+                        <i class="fas fa-user-tie me-1"></i>Technicians
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="./repair-orders.html">
+                        <i class="fas fa-tools me-1"></i>Orders
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="./invoices.html">
+                        <i class="fas fa-file-invoice me-1"></i>Invoices
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="./reports.html">
+                        <i class="fas fa-chart-bar me-1"></i>Reports
+                    </a>
+                </li>
+            </ul>
+<li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+        <i class="fas fa-user-cog me-1"></i>Switch View
+    </a>
+    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+        <li>
+            <a class="dropdown-item" href="http://127.0.0.1:5500/home.html">
+                <i class="fas fa-home me-2"></i>Client Side
+            </a>
+        </li>
+        <li><hr class="dropdown-divider"></li>
+        <li>
+            <a class="dropdown-item" href="./dashboard.html">
+                <i class="fas fa-user-shield me-2"></i>Admin Side
+            </a>
+        </li>
+    </ul>
+</li>
+        </div>
+    </div>
+</nav>
+
+
+    <!--        ------------------------------   Page Header  -------------------------------        -->
+
+    <div class="page-header">
+        <div class="container">
+            <h1>Technicians Management</h1>
+            <p>View and manage all technician records</p>
+        </div>
+    </div>
+
+    <!--        ------------------------------   End Page Header  -------------------------------        -->
+
+
+
+
+    <!--        ------------------------------   Technicians Section  -------------------------------        -->
+
+    <section class="technicians-section">
+        <div class="container">
+            
+            <div class="section-header">
+                <h2 class="section-title">All Technicians</h2>
+                <button class="btn btn-add">
+                    <i class="fas fa-plus me-2"></i>Add New Technician
+                </button>
+            </div>
+
+            <div class="table-container">
+                <table class="table custom-table">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>Phone</th>
+                            <th>Specialty</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>#T001</td>
+                            <td>Ali Al-Mamari</td>
+                            <td>+968 9111 2222</td>
+                            <td><span class="badge-specialty">Refrigerator</span></td>
+                            <td>
+                                <button class="btn btn-edit">
+                                    <i class="fas fa-edit me-1"></i>Edit
+                                </button>
+                                <button class="btn btn-delete">
+                                    <i class="fas fa-trash me-1"></i>Delete
+                                </button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>#T002</td>
+                            <td>Omar Al-Siyabi</td>
+                            <td>+968 9222 3333</td>
+                            <td><span class="badge-specialty">Washing Machine</span></td>
+                            <td>
+                                <button class="btn btn-edit">
+                                    <i class="fas fa-edit me-1"></i>Edit
+                                </button>
+                                <button class="btn btn-delete">
+                                    <i class="fas fa-trash me-1"></i>Delete
+                                </button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>#T003</td>
+                            <td>Yousuf Al-Habsi</td>
+                            <td>+968 9333 4444</td>
+                            <td><span class="badge-specialty">Air Conditioner</span></td>
+                            <td>
+                                <button class="btn btn-edit">
+                                    <i class="fas fa-edit me-1"></i>Edit
+                                </button>
+                                <button class="btn btn-delete">
+                                    <i class="fas fa-trash me-1"></i>Delete
+                                </button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>#T004</td>
+                            <td>Salem Al-Rawahi</td>
+                            <td>+968 9444 5555</td>
+                            <td><span class="badge-specialty">Gas Oven</span></td>
+                            <td>
+                                <button class="btn btn-edit">
+                                    <i class="fas fa-edit me-1"></i>Edit
+                                </button>
+                                <button class="btn btn-delete">
+                                    <i class="fas fa-trash me-1"></i>Delete
+                                </button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>#T005</td>
+                            <td>Rashid Al-Mahrouqi</td>
+                            <td>+968 9555 6666</td>
+                            <td><span class="badge-specialty">Dishwasher</span></td>
+                            <td>
+                                <button class="btn btn-edit">
+                                    <i class="fas fa-edit me-1"></i>Edit
+                                </button>
+                                <button class="btn btn-delete">
+                                    <i class="fas fa-trash me-1"></i>Delete
+                                </button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>#T006</td>
+                            <td>Hamad Al-Amri</td>
+                            <td>+968 9666 7777</td>
+                            <td><span class="badge-specialty">Microwave</span></td>
+                            <td>
+                                <button class="btn btn-edit">
+                                    <i class="fas fa-edit me-1"></i>Edit
+                                </button>
+                                <button class="btn btn-delete">
+                                    <i class="fas fa-trash me-1"></i>Delete
+                                </button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>#T007</td>
+                            <td>Talal Al-Ghassani</td>
+                            <td>+968 9777 8888</td>
+                            <td><span class="badge-specialty">Dryer</span></td>
+                            <td>
+                                <button class="btn btn-edit">
+                                    <i class="fas fa-edit me-1"></i>Edit
+                                </button>
+                                <button class="btn btn-delete">
+                                    <i class="fas fa-trash me-1"></i>Delete
+                                </button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>#T008</td>
+                            <td>Saif Al-Balushi</td>
+                            <td>+968 9888 9999</td>
+                            <td><span class="badge-specialty">Refrigerator</span></td>
+                            <td>
+                                <button class="btn btn-edit">
+                                    <i class="fas fa-edit me-1"></i>Edit
+                                </button>
+                                <button class="btn btn-delete">
+                                    <i class="fas fa-trash me-1"></i>Delete
+                                </button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>#T009</td>
+                            <td>Majid Al-Azri</td>
+                            <td>+968 9999 0000</td>
+                            <td><span class="badge-specialty">Air Conditioner</span></td>
+                            <td>
+                                <button class="btn btn-edit">
+                                    <i class="fas fa-edit me-1"></i>Edit
+                                </button>
+                                <button class="btn btn-delete">
+                                    <i class="fas fa-trash me-1"></i>Delete
+                                </button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>#T010</td>
+                            <td>Khalfan Al-Hashmi</td>
+                            <td>+968 9000 1111</td>
+                            <td><span class="badge-specialty">Washing Machine</span></td>
+                            <td>
+                                <button class="btn btn-edit">
+                                    <i class="fas fa-edit me-1"></i>Edit
+                                </button>
+                                <button class="btn btn-delete">
+                                    <i class="fas fa-trash me-1"></i>Delete
+                                </button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>#T011</td>
+                            <td>Nasser Al-Yahyai</td>
+                            <td>+968 9100 2222</td>
+                            <td><span class="badge-specialty">Gas Oven</span></td>
+                            <td>
+                                <button class="btn btn-edit">
+                                    <i class="fas fa-edit me-1"></i>Edit
+                                </button>
+                                <button class="btn btn-delete">
+                                    <i class="fas fa-trash me-1"></i>Delete
+                                </button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>#T012</td>
+                            <td>Ibrahim Al-Wahaibi</td>
+                            <td>+968 9200 3333</td>
+                            <td><span class="badge-specialty">Dishwasher</span></td>
+                            <td>
+                                <button class="btn btn-edit">
+                                    <i class="fas fa-edit me-1"></i>Edit
+                                </button>
+                                <button class="btn btn-delete">
+                                    <i class="fas fa-trash me-1"></i>Delete
+                                </button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>#T013</td>
+                            <td>Badr Al-Shukaili</td>
+                            <td>+968 9300 4444</td>
+                            <td><span class="badge-specialty">Refrigerator</span></td>
+                            <td>
+                                <button class="btn btn-edit">
+                                    <i class="fas fa-edit me-1"></i>Edit
+                                </button>
+                                <button class="btn btn-delete">
+                                    <i class="fas fa-trash me-1"></i>Delete
+                                </button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>#T014</td>
+                            <td>Hilal Al-Shidi</td>
+                            <td>+968 9400 5555</td>
+                            <td><span class="badge-specialty">Microwave</span></td>
+                            <td>
+                                <button class="btn btn-edit">
+                                    <i class="fas fa-edit me-1"></i>Edit
+                                </button>
+                                <button class="btn btn-delete">
+                                    <i class="fas fa-trash me-1"></i>Delete
+                                </button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>#T015</td>
+                            <td>Waleed Al-Farsi</td>
+                            <td>+968 9500 6666</td>
+                            <td><span class="badge-specialty">Air Conditioner</span></td>
+                            <td>
+                                <button class="btn btn-edit">
+                                    <i class="fas fa-edit me-1"></i>Edit
+                                </button>
+                                <button class="btn btn-delete">
+                                    <i class="fas fa-trash me-1"></i>Delete
+                                </button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+    </section>
+
+    <!--        ------------------------------   End Technicians Section  -------------------------------        -->
+
+
+
+
+    <!--        ------------------------------   Footer  -------------------------------        -->
+
+    <footer>
+        <div class="container">
+            <div class="row">
+
+                <div class="col-md-4 mb-4">
+                    <h5>ApplianceFix Pro</h5>
+                    <p>Your trusted partner for home appliance repair services. Professional, reliable, and affordable.</p>
+                    <div class="social-icons mt-3">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+
+                <div class="col-md-4 mb-4">
+                    <h5>Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="./index.html" class="text-decoration-none">Home</a></li>
+                        <li class="mb-2"><a href="./dashboard.html" class="text-decoration-none">Dashboard</a></li>
+                        <li class="mb-2"><a href="./customers.html" class="text-decoration-none">Customers</a></li>
+                        <li class="mb-2"><a href="./technicians.html" class="text-decoration-none">Technicians</a></li>
+                        <li class="mb-2"><a href="./services.html" class="text-decoration-none">Services</a></li>
+                        <li class="mb-2"><a href="./contact.html" class="text-decoration-none">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-md-4 mb-4">
+                    <h5>Contact Information</h5>
+                    <p><i class="fas fa-location-dot me-2"></i>123 Repair Street, Muscat, Oman</p>
+                    <p><i class="fas fa-phone me-2"></i>+968 1234 5678</p>
+                    <p><i class="fas fa-envelope me-2"></i>info@appliancefixpro.com</p>
+                </div>
+
+            </div>
+
+            <div class="row footer-bottom">
+                <div class="col-12 text-center">
+                    <p class="mb-0">&copy; 2024 ApplianceFix Pro. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!--        ------------------------------   End Footer  -------------------------------        -->
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+
+</body>
+</html>

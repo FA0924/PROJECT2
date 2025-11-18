@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Repair Master</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./assest/css/contact.css">
+</head>
+<body>
+
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="col-md-6 text-end">
+                    <span class="contact-info">
+                        <i class="fas fa-phone"></i> +968 1234 5678
+                    </span>
+                    <span class="contact-info ms-4">
+                        <i class="fas fa-envelope"></i> info@appliancefixpro.com
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--        ------------------------------   Navbar  -------------------------------        -->
+
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">ApplianceFix Pro</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="./home.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./services.html">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./packages.html">Packages</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./process.html">How We Work</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./faq.html">FAQ</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="./contact.html">Contact</a>
+                    </li>
+                </ul>
+                <button class="btn-appointment">
+                    <i class="far fa-calendar-alt"></i> Book Repair
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!--        ------------------------------   End Navbar  -------------------------------        -->
+
+
+
+
+    <!--        ------------------------------   Page Header  -------------------------------        -->
+
+    <div class="page-header">
+        <div class="container">
+            <h1>Contact Us</h1>
+            <p>Get in touch with us for any repair inquiries or support</p>
+        </div>
+    </div>
+
+    <!--        ------------------------------   End Page Header  -------------------------------        -->
+
+
+
+
+    <!--        ------------------------------   Contact Section  -------------------------------        -->
+
+    <section class="contact-section">
+        <div class="container">
+            <h2 class="section-title">Send Us a Message</h2>
+            <p class="section-subtitle">Fill out the form below and we'll get back to you as soon as possible</p>
+
+            <div class="row">
+
+                <!-- Contact Form -->
+                <div class="col-lg-7 mb-4">
+                    <div class="contact-form-box">
+                        <form>
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <label for="name" class="form-label">Full Name *</label>
+                                    <input type="text" class="form-control" id="name" placeholder="Enter your name" required>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="phone" class="form-label">Phone Number *</label>
+                                    <input type="tel" class="form-control" id="phone" placeholder="+968 XXXX XXXX" required>
+                                </div>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="email" class="form-label">Email Address</label>
+                                <input type="email" class="form-control" id="email" placeholder="your.email@example.com">
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="address" class="form-label">Address *</label>
+                                <input type="text" class="form-control" id="address" placeholder="Enter your full address" required>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="appliance" class="form-label">Appliance Type *</label>
+                                <select class="form-select" id="appliance" required>
+                                    <option value="" selected>Select appliance type</option>
+                                    <option value="refrigerator">Refrigerator</option>
+                                    <option value="washing-machine">Washing Machine</option>
+                                    <option value="dryer">Dryer</option>
+                                    <option value="dishwasher">Dishwasher</option>
+                                    <option value="ac">Air Conditioner</option>
+                                    <option value="gas-oven">Gas Oven</option>
+                                    <option value="electric-cooker">Electric Cooker</option>
+                                    <option value="microwave">Microwave</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+
+                            <div class="mb-4">
+                                <label for="problem" class="form-label">Problem Description *</label>
+                                <textarea class="form-control" id="problem" rows="4" placeholder="Please describe the issue you're experiencing..." required></textarea>
+                            </div>
+
+                            <button type="submit" class="btn btn-submit">Submit Request</button>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Contact Information -->
+                <div class="col-lg-5 mb-4">
+                    <div class="contact-info-box">
+                        <h3 class="mb-4" style="color: #fff; font-weight: 700;">Contact Information</h3>
+
+                        <div class="info-item">
+                            <div class="info-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div class="info-content">
+                                <div class="info-title">Phone Number</div>
+                                <div class="info-text">+968 1234 5678</div>
+                            </div>
+                        </div>
+
+                        <div class="info-item">
+                            <div class="info-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="info-content">
+                                <div class="info-title">Email Address</div>
+                                <div class="info-text">info@appliancefixpro.com</div>
+                            </div>
+                        </div>
+
+                        <div class="info-item">
+                            <div class="info-icon">
+                                <i class="fas fa-location-dot"></i>
+                            </div>
+                            <div class="info-content">
+                                <div class="info-title">Office Location</div>
+                                <div class="info-text">123 Repair Street, Muscat, Oman</div>
+                            </div>
+                        </div>
+
+                        <div class="info-item">
+                            <div class="info-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div class="info-content">
+                                <div class="info-title">Working Hours</div>
+                                <div class="info-text">Sun - Thu: 8:00 AM - 8:00 PM<br>Fri - Sat: 9:00 AM - 6:00 PM</div>
+                            </div>
+                        </div>
+
+                        <div class="info-item">
+                            <div class="info-icon">
+                                <i class="fab fa-whatsapp"></i>
+                            </div>
+                            <div class="info-content">
+                                <div class="info-title">WhatsApp</div>
+                                <div class="info-text">+968 1234 5678</div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!--        ------------------------------   End Contact Section  -------------------------------        -->
+
+
+
+
+    <!--        ------------------------------   Map Section  -------------------------------        -->
+
+    <section class="map-section">
+        <div class="container">
+            <h2 class="section-title">Find Us on Map</h2>
+            <p class="section-subtitle">Visit our office or contact us for on-site repairs</p>
+
+            <div class="map-container">
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d58271.08385192405!2d58.38248127910156!3d23.58800990000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e91ff45ddd5919b%3A0x51a3cdfd3dc974a8!2sMuscat%2C%20Oman!5e0!3m2!1sen!2s!4v1234567890123!5m2!1sen!2s"
+                    allowfullscreen="" 
+                    loading="lazy" 
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+        </div>
+    </section>
+
+    <!--        ------------------------------   End Map Section  -------------------------------        -->
+
+
+
+
+    <!--        ------------------------------   Footer  -------------------------------        -->
+
+    <footer>
+        <div class="container">
+            <div class="row">
+
+                <div class="col-md-4 mb-4">
+                    <h5>ApplianceFix Pro</h5>
+                    <p>Your trusted partner for home appliance repair services. Professional, reliable, and affordable.</p>
+                    <div class="social-icons mt-3">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+
+                <div class="col-md-4 mb-4">
+                    <h5>Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="./index.html" class="text-decoration-none">Home</a></li>
+                        <li class="mb-2"><a href="./services.html" class="text-decoration-none">Services</a></li>
+                        <li class="mb-2"><a href="./packages.html" class="text-decoration-none">Packages</a></li>
+                        <li class="mb-2"><a href="./process.html" class="text-decoration-none">How We Work</a></li>
+                        <li class="mb-2"><a href="./faq.html" class="text-decoration-none">FAQ</a></li>
+                        <li class="mb-2"><a href="./contact.html" class="text-decoration-none">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-md-4 mb-4">
+                    <h5>Contact Information</h5>
+                    <p><i class="fas fa-location-dot me-2"></i>123 Repair Street, Muscat, Oman</p>
+                    <p><i class="fas fa-phone me-2"></i>+968 1234 5678</p>
+                    <p><i class="fas fa-envelope me-2"></i>info@appliancefixpro.com</p>
+                </div>
+
+            </div>
+
+            <div class="row footer-bottom">
+                <div class="col-12 text-center">
+                    <p class="mb-0">&copy; 2024 ApplianceFix Pro. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!--        ------------------------------   End Footer  -------------------------------        -->
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+
+</body>
+</html>
